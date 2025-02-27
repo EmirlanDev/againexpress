@@ -10,14 +10,10 @@ const swaggerOptions = {
       version: "1.0.0",
       description: "Документация API для работы с продуктами",
     },
-    servers: [
-      {
-        url: "http://localhost:5000",
-        description: "Локальный сервер",
-      },
-    ],
   },
-  apis: ["./src/routes/*.ts"], // Путь к файлам с роутами
+  // Важно: путь указывается относительно корня проекта,
+  // либо укажи абсолютный путь
+  apis: ["./src/modules/todo/*.ts"],
 };
 
 const swaggerDocs = swaggerJsdoc(swaggerOptions);
