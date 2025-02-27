@@ -3,18 +3,18 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const app_1 = require("./app");
 const server = (0, app_1.buildServer)();
 const start = async () => {
-    const PORT = process.env.PORT || 3000;
+    const PORT = process.env.PORT || 3001;
     try {
         const httpHost = server.listen({
             port: PORT,
             host: "0.0.0.0",
         }, () => {
             console.log(`${new Date()}`);
-            console.log(`server run in: https://localhost:${PORT}`);
+            console.log(`server run in: http://localhost:${PORT}`);
         });
     }
     catch (error) {
-        console.error(``);
+        console.error(`server crash: ${error}`);
         process.exit(1);
     }
 };
